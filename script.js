@@ -24,10 +24,14 @@ const addClass = (slot) => {
 const statusMessage = () => {
     let condition = slot1.className === slot2.className && slot1.className === slot3.className;
     
+    message.classList.remove(...message.classList);
+
     if(condition) {
-       message.innerText = "Vitória";
+        message.classList.add("win");
+        message.innerText = "Vitória";
     } else {
-       message.innerText = "Tente outra vez!"
+        message.classList.add("lose");
+        message.innerText = "Tente outra vez!"
     }
 }
 
